@@ -33,13 +33,13 @@ public class AdminServiceImpl implements AdminService{
 	// 관리자  계정 생성
 	@Override
 	public void aregister(Admin admin) throws NoSuchAlgorithmException {
+//		[1] 입력된 패스워드 값 받아옴
 		String origin = admin.getAdmin_pw();
-		System.out.println("origin = " + origin);
-		String salt = "homekang";
+//		[2] 암호화 작업 
 		String result = encrypt(origin);
-		System.out.println("result =" + result);
+//		[3] 암호화된 패스워드 설정
 		admin.setAdmin_pw(result);
-		System.out.println("admin = " +admin);
+//		[4] 암호화된 패스워드로 insert 
 		sqlSession.insert("aregister", admin);
 	}
 	
@@ -72,65 +72,31 @@ public class AdminServiceImpl implements AdminService{
 		return buffer.toString().toUpperCase();
 	}
 	
-	
-	//관리자 로그인 
-//	@Override
-//	public boolean login(Admin admin) {
-//		String name = sqlSession.selectOne("login",admin);
-//		System.out.println(name);
-//		
-//		
-//		return false;
-//	}
-//	@Override
-//	public boolean login(Admin admin, HttpSession session) {
-//		boolean result = sqlSession.selectOne("login",admin);
-//		System.out.println("실행");
-//		
-//		return result;
-//	}
+	//관리자로그인
 	@Override
 	public boolean login(Admin admin) throws NoSuchAlgorithmException {
-//		System.out.println("로그인실행");
-//		String origin = admin.getAdmin_pw();
-//		System.out.println("로그인 origin = " + origin);
-//		String result = encrypt(origin);
-//		System.out.println("로그인 result =" + result);
-//		admin.setAdmin_pw(result);
-//		System.out.println("admin = " +admin);
-//		//여기까지 실행됨
-		sqlSession.selectOne("login", admin);
-		System.out.println("여기까지 실행완료");
-		int num = sqlSession.selectOne("login",admin);
-		System.out.println(num);
+//		[1] JSP 파일에서 입력된 패스워드를 받아옴
+		String origin = admin.getAdmin_pw();
 		
+//		[2]받아온 패스워드를 암호화 하는 작업 -> 위에 암호화 코드있음 
+		String result = encrypt(origin);
+		
+//		[3] 암호화한 코드를 패스워드로 설정 
+		admin.setAdmin_pw(result);
+
+//		[4] 1 또는 0으로 결과값을 받아와서 처리 
+		int num = sqlSession.selectOne("login",admin);
+		
+//		[5] 아이디 있을경우 0이상이 나오고 없을경우 0이 나오므로 결과에 따라 처리
 		if(num>0) {
 			
 			
-			
 			return true;
 		}else {
+			
 			return false;
 		}
 			
-		
-			
-		
-//		return num>0;
-//		boolean result = a
-		/*int login = sqlSession.selectOne("login", admin.getAdmin_id());//반환형태가 admin
-		int password = sqlSession.selectOne("password",admin.getAdmin_pw()); */
-		/*if(login>0&&password>0) {
-			return true;
-			
-		}else {
-			System.out.println("여기까지오");
-			return false;
-			
-		}*/
 	}
-
-
-
 }
 

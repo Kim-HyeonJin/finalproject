@@ -72,11 +72,9 @@ public class AdminController {
 	
 	@PostMapping("/admin_login")
 	public String admin_login(@ModelAttribute Admin admin ,HttpSession session) throws NoSuchAlgorithmException {
-		System.out.println(admin);
-		adminService.login(admin);
-		
+//		[1] 불린 값으로 로그인 리턴값을 가져옴 
 		boolean result = adminService.login(admin);
-		System.out.println(result);
+
 		if(result) {
 			//세션설정
 			session.setAttribute("adminsession",admin.getAdmin_id());
@@ -85,8 +83,6 @@ public class AdminController {
 			//실패
 //			return 실패창
 		}
-		
-		System.out.println("마지막실행");
 		return "redirect:/home_main"; // 나중에 지우고 
 	}
 	
