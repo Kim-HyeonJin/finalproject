@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<!-- 
+	작업 : 김현진 
+	내용 : 객실등록
+-->
+<mapper namespace="webproject.entity.member.AddRoom">
+	<insert id="addroom" parameterType="addroom">
+		insert into addroom_tb values(
+						addroom_seq.nextval, #{addroom_roomname}, #{addroom_roomcount}, #{addroom_limitperson}, 
+						#{addroom_timeprice}, #{addroom_dateprice}, #{addroom_info}, sysdate, #{addroom_settime}, 
+						#{addroom_entrytime}, #{addroom_exittime}
+		)
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+

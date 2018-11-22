@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<!-- 
+	작업 : 김현진
+	내용 : 이미지 업로드
+ -->
+<mapper namespace="webproject.entity.*">
+	<insert id="imageUpload" parameterType="image">
+		insert into  image_tb values(
+											image_no_seq.nextval, #{image_writer}, #{image_location}, 
+											#{image_fname}, #{image_rname}, #{image_size}, 
+											sysdate)
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
