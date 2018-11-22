@@ -9,11 +9,9 @@
 <div>
 	<div align="center">
 		<form action="addimage" method="post" enctype="multipart/form-data">
-			<div>
-				<img src="http://placehold.it/1000x300"><br>
-				<input type="file" name="image1" multiple>
-			</div>
 			<div align="center">
+				<img src="http://placehold.it/150x150">
+				<input type="file" name="image" multiple>
 				<img src="http://placehold.it/150x150">
 				<input type="file" name="image" multiple>
 				<img src="http://placehold.it/150x150">

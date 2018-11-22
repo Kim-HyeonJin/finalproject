@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -28,6 +29,7 @@ import webproject.service.member.MemberService;
  *
  */
 @Controller
+@RequestMapping("/member")
 public class AddRoomController {
 
 	@Autowired
@@ -67,7 +69,7 @@ public class AddRoomController {
 				Long size = file.getSize();
 				String rname = UUID.randomUUID().toString();
 				
-//				entity 등록
+//				entity에 값 입력
 				image.setImage_location(key);
 				image.setImage_fname(fname);
 				image.setImage_size(size);
