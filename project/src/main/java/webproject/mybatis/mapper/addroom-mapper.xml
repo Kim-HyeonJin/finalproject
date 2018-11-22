@@ -5,7 +5,7 @@
     
 <!-- 
 	작업 : 김현진 
-	내용 : 객실등록
+	내용 : 객실정보를 DB에 저장
 -->
 <mapper namespace="webproject.entity.member.AddRoom">
 	<insert id="addroom" parameterType="addroom">
