@@ -9,13 +9,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor @Builder
 public class Customer {
-	private String id;
-	private String nick;
-	private String password;
-	private String tel;
-	private int point = 0;
-	private int status = 0;
+	private String cs_id;
+	private String cs_pw;
+	private String cs_nick;
+	private String cs_tel;
+	private String cs_grade;
+	private int cs_point;
 	private String joinDate;
-	private String grade;
+	private int status = 0;
 	
 }

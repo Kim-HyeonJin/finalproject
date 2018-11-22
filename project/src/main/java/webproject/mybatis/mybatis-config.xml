@@ -16,6 +16,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="webproject.entity.admin.Admin" alias="admin"/>
 		<typeAlias type="webproject.entity.member.AddRoom" alias="addroom"/>
 		<typeAlias alias="image" type="webproject.entity.member.MemberImage"/>
+		<typeAlias type="webproject.entity.customer.Customer" alias="customer"/>
 
 	</typeAliases>	
 </configuration>

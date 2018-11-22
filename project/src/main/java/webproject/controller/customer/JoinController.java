@@ -2,22 +2,46 @@ package webproject.controller.customer;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import webproject.entity.customer.Customer;
+import webproject.service.customer.CustomerService;
+/**
+ * 회원가입 view와 연결하는 클래스 
+ * @author HWS
+ *
+ */
 @Controller
 public class JoinController {
+	
+	@Autowired
+	private CustomerService customerService;
 
-	@RequestMapping("jointos")
-	public String jointos(HttpServletRequest request ) {
+	@RequestMapping("cs_jointos")
+	public String cs_jointos(HttpServletRequest request) {
 		String tos1 = request.getParameter("tos1");
 		String tos2 = request.getParameter("tos2");
-//		if()
-		return "jointos";
+//		System.out.println(tos1);
+//		System.out.println(tos2);
+		if(tos1 != null && tos2 != null) {
+			if(tos1.equals("true") && tos2.equals("true")) {
+				return "cs_joininput";
+			}
+		}
+		return "cs_jointos";
 	}
 	
-	@RequestMapping("joininput")
-	public String joininput() {
-		return "joininput";
+	@RequestMapping("cs_joininput")
+	public String cs_joininput(@ModelAttribute Customer joinInfo) {
+//		System.out.println(joinInfo.getCs_id());
+		if(joinInfo.getCs_id() != null) {
+			customerService.insert(joinInfo);
+			return "redirect:/home_main";
+		}
+		return "cs_joininput";
 	}
 }
+
