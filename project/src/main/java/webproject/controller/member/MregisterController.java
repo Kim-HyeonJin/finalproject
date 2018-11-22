@@ -14,8 +14,6 @@ import webproject.service.member.MemberService;
 @Controller
 public class MregisterController {
 	
-
-	
 	@Autowired
 	private MemberService memberService;
 	
@@ -28,7 +26,7 @@ public class MregisterController {
 	public String mrigister(@ModelAttribute Member member) {
 		System.out.println("회원사 등록 : " + member);
 		memberService.mregister(member);
-		return "/member_register";
+		return "redirect:/home_main";
 	}
 	
 	
@@ -37,7 +35,7 @@ public class MregisterController {
 		
 	}
 
-	//로그인긔능
+	//로그인기능
 //	@PostMapping("/member_login")
 //	public String memeber() {
 //	}
