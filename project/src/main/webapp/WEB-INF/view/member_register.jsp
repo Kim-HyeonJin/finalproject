@@ -36,7 +36,7 @@
             </tr>
             <tr>
                 <td>우편번호</td>
-                <td><input type="text" name="mb_post" placeholder="주소"></td>
+                <td><input type="number" name="mb_post" placeholder="주소"></td>
             </tr>
             
             <tr>
