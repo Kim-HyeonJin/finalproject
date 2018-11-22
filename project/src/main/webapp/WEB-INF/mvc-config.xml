@@ -9,7 +9,7 @@
     <!-- Uncomment and your base-package here:
          <context:component-scan
             base-package="org.springframework.samples.web"/>  -->
-
+	<context:component-scan base-package="webproject.controller"></context:component-scan>
 	<context:component-scan base-package="webproject.controller.member"></context:component-scan>
 	<context:component-scan base-package="webproject.controller.main"></context:component-scan>
 	<context:component-scan base-package="webproject.controller.admin"></context:component-scan>
