@@ -28,6 +28,4 @@ public class AddRoom {
 	private int addroom_settime;					//대실이용시간
 	private String addroom_entrytime;			//숙박입실가능시간
 	private String addroom_exittime;			//숙박퇴실시간
-	
-	private MultipartFile image;					//이미지 저장을 위한 변수
 }
