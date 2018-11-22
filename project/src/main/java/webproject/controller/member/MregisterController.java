@@ -21,7 +21,6 @@ public class MregisterController {
 	
 	@GetMapping("/member_register")
 	public void mregister() {
-		System.out.println("get방식");
 	}
 	//회원사 등록
 	@PostMapping("/member_register")

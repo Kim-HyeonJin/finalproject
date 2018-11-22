@@ -22,10 +22,12 @@
                 <td>사업자번호</td>
                 <td><input type="number" name="mb_businessno" placeholder="사업자번호"></td>
             </tr>
+            <!-- 
             <tr>
                 <td>업체명</td>
                 <td><input type="text" name="mb_name" placeholder="업체명"></td>
             </tr>
+             -->
             <tr>
                 <td>비밀번호</td>
                 <td><input type="password" name="mb_pw" placeholder="비밀번호"></td>
@@ -36,7 +38,7 @@
             </tr>
             <tr>
                 <td>우편번호</td>
-                <td><input type="text" name="mb_post" placeholder="주소"></td>
+                <td><input type="number" name="mb_post" placeholder="주소"></td>
             </tr>
             
             <tr>

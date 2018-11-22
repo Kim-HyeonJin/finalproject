@@ -27,6 +27,7 @@ public class MemberServiceImpl implements MemberService{
 	//회원사 등록 요청 
 	@Override
 	public void mregister(Member member) {
+		System.out.println("멤버서비스 임플 : " + member);
 		sqlSession.insert("mregister", member);
 		
 				
