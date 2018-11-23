@@ -148,8 +148,8 @@
 					<div>
 						<div class="centerdiv row">
 							<a href="member_register"><img src = "http://placehold.it/100x100"></a>
-							<a href="/admin/admin_event">admin/aevent</a>
-							<a href="/admin/admin_account">admin/account</a>
+							<a href="/admin/admin_event">이벤트</a>
+							<a href="/admin/admin_account">계정생성</a>
 							<a href=""><img src = "http://placehold.it/100x100"></a>
 						</div>
 					</div>

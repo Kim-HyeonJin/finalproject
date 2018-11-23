@@ -29,7 +29,6 @@ import webproject.service.member.MemberService;
  *
  */
 @Controller
-@RequestMapping("/member")
 public class AddRoomController {
 
 	@Autowired
@@ -38,25 +37,26 @@ public class AddRoomController {
 	private HttpSession session;
 	
 //	객실정보 등록
-	@PostMapping("/addroom")
+	@PostMapping("/member/addroom")
 	public String addroom(@ModelAttribute AddRoom addroom) {
+//		addroom.setAddroom_mb_name(session.getAttribute("mb_name"));
+		addroom.setAddroom_mb_name("고려호텔");	//테스트 코드
 		memberservice.addroom(addroom);
 		return "redirect:/home_main";
 	}
 	
-	@GetMapping("/addroom")
+	@GetMapping("/member/addroom")
 	public String addroom() {
 		
-		return "addroom";
+		return "/member/addroom";
 	}
 	
-//	이미지 업로드
-	@PostMapping("/addimage")
+//	객실 이미지 업로드
+	@PostMapping("/member/addimage")
 	public String uploadImage(@ModelAttribute MemberImage image, MultipartHttpServletRequest mRequest) throws IllegalStateException, IOException {
 		MultiValueMap<String, MultipartFile> map = mRequest.getMultiFileMap();
 		for(String key : map.keySet()) {
 //			System.out.println("key : "+key);		//테스트 코드
-			
 			
 			File root = new File("D:/uploadImage");
 			if(!root.exists())	root.mkdirs();
@@ -86,12 +86,11 @@ public class AddRoomController {
 //				System.out.println("fileOrigin : "+file.getOriginalFilename());
 			}
 		}
-		return "redirect:/addroom";
+		return "redirect:/member/addroom";
 	}
 
-	@GetMapping("/addimage")
+	@GetMapping("/member/addimage")
 	public String uploadImage() {
-		return "redirect:/addroom";
+		return "redirect:/member/addroom";
 	}
-	
 }
