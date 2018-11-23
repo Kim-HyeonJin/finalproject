@@ -3,6 +3,7 @@ package webproject.service.admin;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import webproject.entity.admin.Admin;
+import webproject.entity.admin.AdminIntro;
 import webproject.service.password.EncryptService;
 
 /**
@@ -97,6 +99,18 @@ public class AdminServiceImpl implements AdminService{
 			return false;
 		}
 			
+	}
+
+//	관리자 회사소개에 입력된 data 저장
+	@Override
+	public void introRegister(AdminIntro intro) {
+		sqlSession.insert("introRegister", intro);
+		
+	}
+//  관리자 페이지: DB에 입력된 회사소개 data 불러오기
+	@Override
+	public List<AdminIntro> introLoad() {
+		return sqlSession.selectList("introSelect");
 	}
 }
 

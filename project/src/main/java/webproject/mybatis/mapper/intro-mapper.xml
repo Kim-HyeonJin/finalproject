@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="webproject.entity.admin.AdminIntro">
+	
+	<insert id="introRegister" parameterType="intro">
+		insert into intro_tb(
+			intro_no, intro_title, intro_content)
+			values(intro_no_seq.nextval, #{intro_title}, #{intro_content})
+	</insert>
+	<select id="introSelect" parameterType="intro">
+		select intro_title, intro_content from intro_tb
+	</select>
+		
+</mapper>

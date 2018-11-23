@@ -144,7 +144,7 @@
                         <a href="" class="tableft">회원사검색</a>
                         <a href="/admin/admin_request" class="tableft">요청내역</a>
                     
-                        <a href="" class="tableft">회사소개</a>
+                        <a href="/project/admin/admin_company_intro" class="tableft">회사소개</a>
                         <a href="/admin/admin_event" class="tableft">이벤트정보</a>
                         <a href="" class="tableft">공지사항</a>
                     

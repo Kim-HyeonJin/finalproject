@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import webproject.entity.admin.Admin;
+import webproject.entity.admin.AdminIntro;
 import webproject.service.admin.AdminService;
 
 @Controller
-@RequestMapping("/admin")
+//@RequestMapping("/admin")
 public class AdminController {
 	
 	@Autowired
@@ -85,10 +87,23 @@ public class AdminController {
 		}
 		return "redirect:/home_main"; // 나중에 지우고 
 	}
+//	관리자 회사소개 페이지에서 입력받은 data를 adminService에 전달
+//	@RequestMapping(value="admin_company_intro", method= {RequestMethod.GET})
+	@PostMapping("/admin/admin_company_intro")
+	public String admin_company_intro(@ModelAttribute AdminIntro intro) {
+		System.out.println("Intro = "+intro);
+		if(intro.getIntro_title() != null && intro.getIntro_content() != null) {
+			adminService.introRegister(intro);
+			return "redirect:/home_main";
+		}
+		return "/admin/admin_company_intro";
+	}
 	
-	
-	
-	
+	@GetMapping("/admin/admin_company_intro")
+	public String admin_company_intro() {
+//		adminService.
+		return "/admin/admin_company_intro";
+	}
 	// 세션이라는 객체가 존재한다.
 //	세션이라는 객체에다 addAttribute를 해준다
 //	만약 로그인이 성공하면 아이디값에다 아이디+세션값을 지정하고
