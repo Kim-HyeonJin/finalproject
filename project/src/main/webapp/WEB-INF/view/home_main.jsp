@@ -9,17 +9,17 @@
                         <!--텍스트로 할지 셀렉으로 할지 결정해야함
                             버튼은 클릭할떄 값이 안바낄듯?
                         -->
-                        
+                        <form action="main_list" method="post">
                         <select class="hotel btsize">
                             <option>호텔</option>
                             <option>모텔</option>
                             <option>리조트</option>
                         </select>
-                        <button class="hotel btsize">구분</button>
-                        <button class="localbutton btsize">지역</button>
+                        <input type="button" class="hotel btsize" value="구분">
+                        <input type="button" class="localbutton btsize" value="지역">
                         <input type="text" placeholder="검색어" class="searchbar">
                         <input type="submit" value="검색" class="btsize">
-                        
+                       </form>
                         <div class="localmenu">
                             <!--디폴트 메뉴-->
                             <input id="tab1" type="radio" name="tabs" class="bthide"checked>

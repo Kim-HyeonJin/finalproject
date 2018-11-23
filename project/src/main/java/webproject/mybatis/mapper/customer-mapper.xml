@@ -8,4 +8,10 @@
 		(cs_email, cs_pw, cs_nick, cs_phone, cs_grade, cs_point,cs_reg)
 		values(#{cs_id}, #{cs_pw}, #{cs_nick}, #{cs_tel}, '일반', 0, sysdate)
 	</insert>
+	
+	
+	<select id="searchlist" resultType="mainsearch">
+		select *from addroom_tb order by addroom_no
+	</select>
+	
 </mapper>    

@@ -4,6 +4,16 @@
 <head>
     <title>홈페이지 </title>
     <style>
+    
+/* 		기본메뉴 숨김처리*/    
+    	
+    	.localmenu{
+    		display:none;
+    	}
+    	.kindtab{
+    		display:none;
+    	}
+    	
 /*       페이지 전체 크기*/
         main{
              height: 1280px;
@@ -105,15 +115,29 @@
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script>
 
-        var showFlag=true;
+        var showFlag=false;
 	        $(document).ready(function(){
 	            //지역버튼검색 토글
 	            $(".localbutton").on("click",function(){
-	                $(".localmenu").toggle();   
+	            	if(showFlag){
+	            		$(".localmenu").hide();
+	            	}else{
+	            		$(".localmenu").css("display","block");
+	            	}
+	            	showFlag=!showFlag;
+	                //$(".localmenu").toggle();   
 	            });
+	            
+	            
                 //종류버튼 검색 토글
                 $(".hotel").on("click",function(){
-	                $(".kindtab").toggle();   
+     	            if(showFlag){
+     	            	$(".kindtab").hide();
+     	            }else{
+     	            	$(".kindtab").css("display","block");
+     	            }
+     	           showFlag=!showFlag;
+	                //$(".kindtab").toggle();   
 	            });
                 
 	        });
