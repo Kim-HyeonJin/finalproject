@@ -12,6 +12,6 @@ public interface MemberService {
 	void mregister(Member member);
 	void addroom(AddRoom addroom);
 	void upload(MemberImage image);
-
+	void upload_mainImg(MemberImage image);
 
 }
