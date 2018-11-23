@@ -15,6 +15,6 @@ public interface MemberService {
 	boolean login(Member member) throws NoSuchAlgorithmException;
 	void addroom(AddRoom addroom);
 	void upload(MemberImage image);
-
+	void upload_mainImg(MemberImage image);
 
 }

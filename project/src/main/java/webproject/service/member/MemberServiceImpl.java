@@ -45,11 +45,20 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public void addroom(AddRoom addroom) {
 		sqlSession.insert("addroom", addroom);
+		
 	}
+
+	//객실이미지 업로드
 
 	@Override
 	public void upload(MemberImage image) {
-		System.out.println("serviceImpl 실행");
+//		System.out.println("serviceImpl 실행");	//테스트 코드
+		sqlSession.insert("imageUpload", image);
+	}
+
+	//숙소 메인이미지
+	@Override
+	public void upload_mainImg(MemberImage image) {
 		sqlSession.insert("imageUpload", image);
 	}
 

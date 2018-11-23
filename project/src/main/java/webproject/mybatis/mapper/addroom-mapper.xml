@@ -12,7 +12,7 @@
 		insert into addroom_tb values(
 						addroom_seq.nextval, #{addroom_roomname}, #{addroom_roomcount}, #{addroom_limitperson}, 
 						#{addroom_timeprice}, #{addroom_dateprice}, #{addroom_info}, sysdate, #{addroom_settime}, 
-						#{addroom_entrytime}, #{addroom_exittime}
+						#{addroom_entrytime}, #{addroom_exittime}, #{addroom_mb_name}
 		)
 	</insert>
 </mapper>

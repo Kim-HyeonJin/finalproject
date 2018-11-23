@@ -39,6 +39,8 @@ public class AddRoomController {
 //	객실정보 등록
 	@PostMapping("/member/addroom")
 	public String addroom(@ModelAttribute AddRoom addroom) {
+//		addroom.setAddroom_mb_name(session.getAttribute("mb_name"));
+		addroom.setAddroom_mb_name("고려호텔");	//테스트 코드
 		memberservice.addroom(addroom);
 		return "redirect:/home_main";
 	}
@@ -49,7 +51,7 @@ public class AddRoomController {
 		return "/member/addroom";
 	}
 	
-//	이미지 업로드
+//	객실 이미지 업로드
 	@PostMapping("/member/addimage")
 	public String uploadImage(@ModelAttribute MemberImage image, MultipartHttpServletRequest mRequest) throws IllegalStateException, IOException {
 		MultiValueMap<String, MultipartFile> map = mRequest.getMultiFileMap();
@@ -91,5 +93,4 @@ public class AddRoomController {
 	public String uploadImage() {
 		return "redirect:/member/addroom";
 	}
-	
 }
