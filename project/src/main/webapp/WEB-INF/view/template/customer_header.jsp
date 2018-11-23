@@ -151,8 +151,8 @@
             <article class="hh">
                 <div class="hh menu menu-fixed">
                     <a href="home_main"><img src="http://placehold.it/50x50" class="left"></a>
-                    <a href="" class="right">예약내역</a>
-                    <a href="cs_jointos" class="right">회원가입</a>
+                    <a href="" class="right">예약내역</a>&nbsp;
+                    <a href="cs_jointos" class="right">회원가입</a>&nbsp;
                     <a href="member" class="right">로그인</a>
                 </div>
             </article>

@@ -6,7 +6,6 @@
 </body>
     <footer>   
         <article  class="hh">
-            <hr>
             <div>
                 <address>
 	                <img src="http://placehold.it/30x30">
