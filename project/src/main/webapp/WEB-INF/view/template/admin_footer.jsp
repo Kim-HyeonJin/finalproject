@@ -20,6 +20,18 @@
                     <a href="admin_login">관리자로그인</a>
                 </div>
             <div>
+                <address>a href="" >회사소개</a>
+                <a href="">제휴광고문의</a>
+                <a href="">인재채용</a>
+                <a href="">이용약관</a>
+                <a href="">개인정보처리 방침</a>
+                <a href="">회사소개</a>
+            </div>
+            <hr>
+                <div>
+                    <a href="admin_login">관리자로그인</a>
+                </div>
+            <div>
                 <address>
                     (주)야놀자
                     대표이사: 이수진
