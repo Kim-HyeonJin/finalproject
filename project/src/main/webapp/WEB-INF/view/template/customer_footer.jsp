@@ -13,11 +13,8 @@
             </div>
             <div>
                 <a href="">회사소개</a>
-                <a href="">제휴광고문의</a>
-                <a href="">인재채용</a>
                 <a href="">이용약관</a>
-                <a href="">개인정보처리 방침</a>
-                <a href="">회사소개</a>
+                <a href="">회원사로그인</a>
             </div>
             <div>
                 <address>

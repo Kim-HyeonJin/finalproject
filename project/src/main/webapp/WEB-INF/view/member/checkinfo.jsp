@@ -7,10 +7,10 @@
  -->
 
 <div>
-	<form action="addimage" method="post" enctype="multipart/form-data">
+	<form action="upload_mainImg" method="post" enctype="multipart/form-data">
 		<div align="center" style="height:500px; width: 400px; float: left;">
 			<img src="http://placehold.it/500x300"><br>
-			<input type="file" name="main_image" multiple>
+			<input type="file" name="main_image">
 			<input type="submit" value="이미지 등록">
     	</div>
 	</form>
