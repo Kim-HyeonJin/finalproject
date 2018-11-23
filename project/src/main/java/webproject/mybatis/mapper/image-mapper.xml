@@ -5,7 +5,7 @@
     
 <!-- 
 	작업 : 김현진
-	내용 : 이미지 업로드
+	내용 : 이미지를 DB에 저장
  -->
 <mapper namespace="webproject.entity.*">
 	<insert id="imageUpload" parameterType="image">

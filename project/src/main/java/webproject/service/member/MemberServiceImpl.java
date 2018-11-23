@@ -28,15 +28,15 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public void mregister(Member member) {
 		sqlSession.insert("mregister", member);
-		
-				
 	}
 
+	//객실 정보 등록
 	@Override
 	public void addroom(AddRoom addroom) {
 		sqlSession.insert("addroom", addroom);
 	}
 
+	//이미지 업로드
 	@Override
 	public void upload(MemberImage image) {
 		System.out.println("serviceImpl 실행");
