@@ -9,15 +9,10 @@
     <footer>
         <article class="fh footdiv">
             <div>
-                <img src="http://placehold.it/50x50">
+                <img src="http://placehold.it/50x50">&nbsp;
+                 <a href="/admin/admin_login">관리자 로그인</a>
             </div>
-            <div>
-                <a href="intro_main">회사소개</a>&nbsp;
-                <a href="">이용약관</a>&nbsp;
-                <a href="/member/member_login">회원사 로그인</a>
-
-
-            </div>
+               
             <div>
                 <address>
                     (주)야놀자
