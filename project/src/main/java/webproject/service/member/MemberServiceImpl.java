@@ -62,8 +62,6 @@ public class MemberServiceImpl implements MemberService{
 		sqlSession.insert("imageUpload", image);
 	}
 
-
-
 	@Override
 	public boolean login(Member member) throws NoSuchAlgorithmException {
 		System.out.println("실행");
