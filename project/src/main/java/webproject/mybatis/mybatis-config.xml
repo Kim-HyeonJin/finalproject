@@ -17,6 +17,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="webproject.entity.member.AddRoom" alias="addroom"/>
 		<typeAlias type="webproject.entity.member.MemberImage" alias="image"/>
 		<typeAlias type="webproject.entity.customer.Customer" alias="customer"/>
+		<typeAlias type="webproject.entity.customer.MainSearch" alias="mainsearch"/>
 
 	</typeAliases>	
 </configuration>
