@@ -138,6 +138,21 @@
                 </div>
                 <div>
                         
+
+                        <a href="/admin/admin_search" class="tableft">회원검색</a>
+                   
+                        
+                        <a href="" class="tableft">회원사검색</a>
+                        <a href="/admin/admin_request" class="tableft">요청내역</a>
+                    
+                        <a href="/project/admin/admin_company_intro" class="tableft">회사소개</a>
+                        <a href="/admin/admin_event" class="tableft">이벤트정보</a>
+                        <a href="" class="tableft">공지사항</a>
+                    
+                    
+                        <a href="/admin/admin_staticchart" class="tableft">매출통계</a>
+                        <a href="" class="tableft">이용자통계</a>
+
                         <!-- 수정해야할 페이지 -->
 <!--                         <a href="/admin/admin_search" class="tableft">회원검색</a> -->
 <!--                         <a href="" class="tableft">회원사검색</a> -->

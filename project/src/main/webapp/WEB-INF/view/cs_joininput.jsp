@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <!-- 일반 사용자 회원가입 정보입력 -->
 <!-- 작성자 : HWS -->
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<jsp:include page="../view/template/customer_header.jsp"></jsp:include>
 <html>
 <head>
 	<title>사용자 회원 가입 : 정보입력</title>
@@ -20,3 +22,4 @@
 	</form>
 </body>
 </html>
+<jsp:include page="../view/template/customer_footer.jsp"></jsp:include>
