@@ -9,7 +9,7 @@
  -->
 <mapper namespace="webproject.entity.*">
 	<insert id="imageUpload" parameterType="image">
-		insert into  image_tb values(
+		select into  image_tb values(
 											image_no_seq.nextval, #{image_writer}, #{image_location}, 
 											#{image_fname}, #{image_rname}, #{image_size}, 
 											sysdate)

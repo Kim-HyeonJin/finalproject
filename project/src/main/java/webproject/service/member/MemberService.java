@@ -1,10 +1,9 @@
 package webproject.service.member;
 
-import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 import org.springframework.stereotype.Service;
 
-import webproject.entity.admin.Admin;
 import webproject.entity.member.AddRoom;
 import webproject.entity.member.Member;
 import webproject.entity.member.MemberImage;
@@ -12,9 +11,10 @@ import webproject.entity.member.MemberImage;
 @Service
 
 public interface MemberService {
-	void mregister(Member member);
+	void mregister(Member member) throws NoSuchAlgorithmException;
+	boolean login(Member member) throws NoSuchAlgorithmException;
 	void addroom(AddRoom addroom);
 	void upload(MemberImage image);
-
+	void upload_mainImg(MemberImage image);
 
 }

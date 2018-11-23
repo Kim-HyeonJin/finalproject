@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 /**
  * 
  * @author 김현진
- *
+ * 
  */
 @Data
 @NoArgsConstructor
@@ -28,4 +28,5 @@ public class AddRoom {
 	private int addroom_settime;					//대실이용시간
 	private String addroom_entrytime;			//숙박입실가능시간
 	private String addroom_exittime;			//숙박퇴실시간
+	private String addroom_mb_name;			//숙소이름 (외래키)
 }

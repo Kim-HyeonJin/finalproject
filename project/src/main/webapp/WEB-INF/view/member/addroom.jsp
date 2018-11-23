@@ -11,13 +11,13 @@
 		<form action="addimage" method="post" enctype="multipart/form-data">
 			<div align="center">
 				<img src="http://placehold.it/150x150">
-				<input type="file" name="image" multiple>
+				<input type="file" name="image1" multiple>
 				<img src="http://placehold.it/150x150">
-				<input type="file" name="image" multiple>
+				<input type="file" name="image2" multiple>
 				<img src="http://placehold.it/150x150">
-				<input type="file" name="image" multiple>
+				<input type="file" name="image3" multiple>
 				<img src="http://placehold.it/150x150">
-				<input type="file" name="image" multiple><br><br>
+				<input type="file" name="image4" multiple><br><br>
 				<input type="submit" value="이미지 등록">
 			</div>
 		</form>
