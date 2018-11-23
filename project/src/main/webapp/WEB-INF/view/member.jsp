@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 
-<jsp:include page="../view/template/customer_header.jsp"></jsp:include>
+<jsp:include page="../view/template/member_header.jsp"></jsp:include>
  			   <div class="centerdiv">
                     <form action=""></form>
                     <div class="fh">
@@ -157,4 +157,4 @@
 					</div>
 
 
-<jsp:include page="../view/template/customer_footer.jsp"></jsp:include>
+<jsp:include page="../view/template/member_footer.jsp"></jsp:include>

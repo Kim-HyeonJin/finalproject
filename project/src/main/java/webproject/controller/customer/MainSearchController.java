@@ -21,6 +21,9 @@ public class MainSearchController {
 	
 	@RequestMapping("/main_list")
 	public String main_list(Model model) {
+		
+		System.out.println(mainSearch.list());
+		
 		model.addAttribute("list", mainSearch.list());
 		return "/main_list";
 	}

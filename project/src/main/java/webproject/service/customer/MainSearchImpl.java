@@ -14,7 +14,7 @@ public class MainSearchImpl implements MainSearch{
 
 	@Override
 	public List<MainSearch> list() {
-		return sqlSession.selectList("list");
+		return sqlSession.selectList("searchlist");
 		
 	}
 	

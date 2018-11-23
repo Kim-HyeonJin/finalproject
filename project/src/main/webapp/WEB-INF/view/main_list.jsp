@@ -30,21 +30,21 @@
 			</div>
 			<div style="width: 50%; float: right;">
 				<div>
-					업체명 : ${msearch.name}
+					${msearch.addroom_mb_name}
 				</div>
 				<div>
 					후기 개수 : 00
 				</div>
 				<div>
-					대실 :${msearch.}
-					<span>금액 : ${msearch.timeprice}</span>
+					대실 :${msearch.addroom_settime}
+					<span>금액 : ${msearch.addroom_timeprice}</span>
 				</div>
 				<div>
-					숙박 :${msearch.entrytime}
-					<span>예약가 : ${msearch.dateprice}</span>
+					숙박 :${msearch.addroom_entrytime}
+					<span>예약가 : ${msearch.addroom_dateprice}</span>
 				</div>
 				<div>
-					설명 : ${msearch.info}
+					설명 : ${msearch.addroom_info}
 				</div>
 			</div>
 		</div>
@@ -56,7 +56,7 @@
 		<h1>내용</h1>
 		</div>
 		<div>
-		<h1>내용</h1>
+		<h1>내용</h1>z`
 		</div>
 		<div>
 		<h1>내용</h1>
