@@ -6,39 +6,37 @@
 	내용 : 객실등록 페이지
  -->
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript">
-        $(function() {
-            $("#inputImg").on('change', function(){
-                readURL(this);
-            });
-        });
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#imgInput").on('change', function(){
+			readURL(this);
+		});
+	});
 
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                    $('#img').attr('src', e.target.result);
-                }
-
-              reader.readAsDataURL(input.files[0]);
-            }
-        }
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function (e) {
+					$('#img').attr('src', e.target.result);
+				}
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
 </script>
 
 <div>
 	<div align="center">
 		<form action="addimage" method="post" enctype="multipart/form-data">
 			<div align="center">
-				<img id="img" src="http://placehold.it/300x300" onchange="readURL(this);">
-				<input type="file" name="image1" class="inputImg" multiple>
-				<img id="img" src="#" onchange="readURL(this);">
-				<input type="file" name="image2" class="inputImg" multiple>
-				<img id="img" src="#" onchange="readURL(this);">
-				<input type="file" name="image3" class="inputImg" multiple>
-				<img id="img" src="#" onchange="readURL(this);">
-				<input type="file" name="image4" class="inputImg" multiple><br><br>
+				<img class="img" src="http://placehold.it/300x300">
+				<input type="file" name="image1" class="inputImg">
+				<img class="img" src="#">
+				<input type="file" name="image2" class="inputImg">
+				<img class="img" src="#">
+				<input type="file" name="image3" class="inputImg">
+				<img class="img" src="#">
+				<input type="file" name="image4" class="inputImg"><br><br>
 				<input type="submit" value="이미지 등록">
 			</div>
 		</form>
