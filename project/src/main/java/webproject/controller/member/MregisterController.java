@@ -70,6 +70,11 @@ public class MregisterController {
 			session.setAttribute("mbId",member.getMb_businessno());
 			session.setAttribute("mbName",power);
 			System.out.println("세션실행 후");
+			
+//			int busineeno = (int)session.getAttribute("mbid");
+//			String name = (String)session.getAttribute("mbName");
+			
+			
 			return "redirect:/home_main";
 		}else {
 			//실패
