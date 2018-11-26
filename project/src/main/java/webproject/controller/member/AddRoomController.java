@@ -39,7 +39,7 @@ public class AddRoomController {
 //	객실정보 등록
 	@PostMapping("/member/addroom")
 	public String addroom(@ModelAttribute AddRoom addroom) {
-//		addroom.setAddroom_mb_name(session.getAttribute("mb_name"));
+//		addroom.setAddroom_mb_name((String)session.getAttribute("mbName"));
 		addroom.setAddroom_mb_name("고려호텔");	//테스트 코드
 		memberservice.addroom(addroom);
 		return "redirect:/home_main";
@@ -74,6 +74,7 @@ public class AddRoomController {
 				image.setImage_fname(fname);
 				image.setImage_size(size);
 				image.setImage_rname(rname);
+//				image.setImage_writer((int)session.getAttribute("mbId"));
 				image.setImage_writer(1234567890);
 				
 //				파일저장
