@@ -28,6 +28,7 @@
 		    		<input type="text" name="addroom_roomname" placeholder="객실이름을 입력해주세요"><br><br>
 		    		<input type="text" name="addroom_roomcount" placeholder="동일한 객실의 숫자를 입력해주세요"><br><br>
 		    		<input type="text" name="addroom_limitperson" placeholder="객실 수용인원을 입력해주세요"><br><br>
+		    		
 		    		<input type="text" name="addroom_settime" placeholder="대실 설정 시간을 입력해주세요"><br><br>
 		    		<input type="text" name="addroom_timeprice" placeholder="대실 금액을 입력해주세요"><br><br>
 		    		<input type="text" name="addroom_entrytime" placeholder="숙박 입실 시간을 입력하세요"><br><br>

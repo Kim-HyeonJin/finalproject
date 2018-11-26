@@ -10,7 +10,7 @@
         <article class="fh footdiv">
             <div>
                 <img src="http://placehold.it/50x50">&nbsp;
-                 <a href="/admin/admin_login">관리자 로그인</a>
+                 <a href="../admin/admin_login">관리자 로그인</a>
             </div>
                
             <div>

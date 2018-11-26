@@ -13,6 +13,10 @@
 		select count(*) from member_tb where mb_businessno=#{mb_businessno} and mb_pw=#{mb_pw} 
 	</select>
 	
+	<select parameterType="member" id="power" resultType="String">
+		select mb_name from member_tb where mb_businessno=#{name} 
+	</select>
+	
 
 	
 </mapper>

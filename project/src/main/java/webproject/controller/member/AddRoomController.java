@@ -39,8 +39,14 @@ public class AddRoomController {
 //	객실정보 등록
 	@PostMapping("/member/addroom")
 	public String addroom(@ModelAttribute AddRoom addroom) {
-//		addroom.setAddroom_mb_name(session.getAttribute("mb_name"));
-		addroom.setAddroom_mb_name("고려호텔");	//테스트 코드
+		addroom.setAddroom_mb_name((String)session.getAttribute("mbName"));
+		System.out.println("세션 = "+session.getAttribute("mbName"));
+		
+//		String mname = addroom.getAddroom_mb_name();
+//		String mname2 = (String) session.getAttribute("mb_name");
+//		System.out.println("mname = "+mname);
+//		System.out.println();
+//		addroom.setAddroom_mb_name("고려호텔");	//테스트 코드
 		memberservice.addroom(addroom);
 		return "redirect:/home_main";
 	}

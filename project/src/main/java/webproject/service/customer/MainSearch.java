@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface MainSearch {
-	List<MainSearch> list();
+	List<MainSearch> list(String keyword);
 	
 	
 }

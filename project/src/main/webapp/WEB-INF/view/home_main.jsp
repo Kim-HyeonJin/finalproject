@@ -9,21 +9,27 @@
                         <!--텍스트로 할지 셀렉으로 할지 결정해야함
                             버튼은 클릭할떄 값이 안바낄듯?
                         -->
+                        <!-- 라벨 지역에서 밑에 상세지역을 클릭하면
+                        	선택한 값을 value로 설정해서 설정한 값을
+                        	버튼 value 값으로 가져와야함
+                         -->
+                         
+                         <!-- a태그 탭메뉴 밖뚸야함 라벨을 -->
                         <form action="main_list" method="post">
-                        <select class="hotel btsize">
+                        <select class="hotel btsize" name="typekey">
                             <option>호텔</option>
                             <option>모텔</option>
                             <option>리조트</option>
                         </select>
                         <input type="button" class="hotel btsize" value="구분">
-                        <input type="button" class="localbutton btsize" value="지역">
-                        <input type="text" placeholder="검색어" class="searchbar">
+                        <input type="button" name="locationkey" class="localbutton btsize" value="지역">
+                        <input type="text" name = "searchkey" placeholder="검색어" class="searchbar">
                         <input type="submit" value="검색" class="btsize">
                        </form>
                         <div class="localmenu">
                             <!--디폴트 메뉴-->
                             <input id="tab1" type="radio" name="tabs" class="bthide"checked>
-                            <label for="tab1">서울</label>
+                            <a href=""><label for="tab1">서울</label></a>
 
                             <input id="tab2" type="radio" name="tabs" class="bthide">
                             <label for="tab2">경기</label>
