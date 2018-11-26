@@ -26,11 +26,11 @@
 		<c:forEach var="msearch" items="${list}">
 		<div style="height:180px;">
 			<div style= "width: 40%; float:left;">
-				<img src="http://placehold.it/210x140">
+				<a href="c_booking"><img src="http://placehold.it/210x140"></a>
 			</div>
 			<div style="width: 50%; float: right;">
 				<div>
-					${msearch.addroom_mb_name}
+					<a href="c_booking">업체명 : ${msearch.addroom_mb_name}</a>
 				</div>
 				<div>
 					후기 개수 : 00
@@ -56,7 +56,7 @@
 		<h1>내용</h1>
 		</div>
 		<div>
-		<h1>내용</h1>z`
+		<h1>내용</h1>
 		</div>
 		<div>
 		<h1>내용</h1>

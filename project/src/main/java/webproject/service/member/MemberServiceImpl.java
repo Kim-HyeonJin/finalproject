@@ -80,7 +80,7 @@ public class MemberServiceImpl implements MemberService{
 			return true;
 		}else {
 			System.out.println("펄스싫애");
-			return true;			
+			return false;			
 		}
 		
 	}
@@ -112,6 +112,16 @@ public class MemberServiceImpl implements MemberService{
 		log.debug("결과 크기 : {}", buffer.toString().length());
 		
 		return buffer.toString().toUpperCase();
+	}
+
+	@Override
+	public String nameok(String name) {
+		System.out.println("nameok 실행");
+		String abc = sqlSession.selectOne("power",name);
+		System.out.println("abc = " +abc);
+		
+		return abc;
+		
 	}
 	
 	

@@ -24,55 +24,55 @@ public class AdminController {
 	private AdminService adminService;
 	
 	//관리자 계정생성
-	@GetMapping("/admin_account")
+	@GetMapping("/admin/admin_account")
 	public void adminaccount() {
 		System.out.println("겟");
 	}
 	
 	//관리자 계정 생성 등록
-	@PostMapping("/admin_account")
+	@PostMapping("/admin/admin_account")
 	public String admin_account(@ModelAttribute Admin admin) throws NoSuchAlgorithmException {
 		adminService.aregister(admin);
 		return "redirect:/home_main";
 	}
 	
 	//이벤트
-	@RequestMapping("/admin_event")
+	@RequestMapping("/admin/admin_event")
 	public void admin_event() {
 		
 	}
 	
 	//회원검색
-	@GetMapping("/admin_search")
+	@GetMapping("/admin/admin_search")
 	public void admin_search() {
 		
 	}
 	
 	//관리자 통계
-	@GetMapping("/admin_staticchart")
+	@GetMapping("/admin/admin_staticchart")
 	public void admin_staticchart() {
 		
 	}
 	
 	//관리자 게시물관리
-	@GetMapping("/admin_notice")
+	@GetMapping("/admin/admin_notice")
 	public void admin_notice() {
 		
 	}
 	
 	
 	//판매자 등록요청
-	@GetMapping("/admin_request")
+	@GetMapping("/admin/admin_request")
 	public void admin_request() {
 		
 	}
 	
-	@GetMapping("/admin_login")
+	@GetMapping("/admin/admin_login")
 	public void adminlogin() {
 		
 	}
 	
-	@PostMapping("/admin_login")
+	@PostMapping("/admin/admin_login")
 	public String admin_login(@ModelAttribute Admin admin ,HttpSession session) throws NoSuchAlgorithmException {
 //		[1] 불린 값으로 로그인 리턴값을 가져옴 
 		boolean result = adminService.login(admin);
