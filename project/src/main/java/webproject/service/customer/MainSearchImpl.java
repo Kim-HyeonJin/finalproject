@@ -13,10 +13,12 @@ public class MainSearchImpl implements MainSearch{
 	private SqlSession sqlSession;
 
 	@Override
-	public List<MainSearch> list() {
-		return sqlSession.selectList("searchlist");
+	public List<MainSearch> list(String keyword) {
+		return sqlSession.selectList("searchlist",keyword);
 		
 	}
+
+
 	
 	
 	

@@ -129,8 +129,18 @@
             <article class="">
                 <div class="hh menu menu-fixed">
                     <a href="../home_main"><img src="http://placehold.it/50x50" class="left"></a>
+                    <a href="" class="left">정보확인</a>&nbsp;
+                    <a href="../member/addroom"   class="left">객실등록</a>&nbsp;
+                    <a href=""  class="left">예약확인</a>&nbsp;
+                    <a href=""  class="left">통계</a>&nbsp;
+                    
+
+                    
 
                     <a href="" class="right tableft">회원정보(0000)</a>&nbsp;
+                    <a href="../member/addroom" class="right tableft">객실등록</a>&nbsp;
+                    <a href="../member/member_login" class="right tableft">로그인</a>
+                    <!-- 조건문걸곳 -->
                     <a href="" class="right tableft">로그아웃</a>
                 </div>
                 <div>

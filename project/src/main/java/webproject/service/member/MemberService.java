@@ -16,5 +16,7 @@ public interface MemberService {
 	void addroom(AddRoom addroom);
 	void upload(MemberImage image);
 	void upload_mainImg(MemberImage image);
-	
+	String nameok(String name);
+
+
 }

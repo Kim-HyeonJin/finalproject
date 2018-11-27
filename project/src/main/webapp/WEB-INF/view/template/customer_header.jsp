@@ -9,6 +9,9 @@
     	
     	.localmenu{
     		display:none;
+    		/*position: absolute;*/
+    		background-color:skyblue; 
+    		/*margin-left:200px;*/
     	}
     	.kindtab{
     		display:none;
@@ -115,30 +118,42 @@
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script>
 
-        var showFlag=false;
+        var showFlag1=true;
+        var showFlag2=true;
 	        $(document).ready(function(){
 	            //지역버튼검색 토글
 	            $(".localbutton").on("click",function(){
-	            	if(showFlag){
-	            		$(".localmenu").hide();
-	            	}else{
+	            	if(showFlag1){
 	            		$(".localmenu").css("display","block");
+	            		if(!showFlag2){
+		            		$(".kindtab").hide();
+		            		showFlag2=!showFlag2;
+	            		}
+	            	}else{
+	            		$(".localmenu").hide();
+	            		
 	            	}
-	            	showFlag=!showFlag;
+	            	showFlag1=!showFlag1;
 	                //$(".localmenu").toggle();   
 	            });
 	            
 	            
                 //종류버튼 검색 토글
                 $(".hotel").on("click",function(){
-     	            if(showFlag){
-     	            	$(".kindtab").hide();
-     	            }else{
+     	            if(showFlag2){
      	            	$(".kindtab").css("display","block");
+     	            	if(!showFlag1){
+	     	            	$(".localmenu").hide();
+     	            		showFlag1=!showFlag1;
+     	            	}
+     	            }else{
+     	            	$(".kindtab").hide();
      	            }
-     	           showFlag=!showFlag;
+     	           showFlag2=!showFlag2;
 	                //$(".kindtab").toggle();   
 	            });
+                
+              
                 
 	        });
  
