@@ -2,19 +2,16 @@ package webproject.controller.member;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
 import java.util.UUID;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -33,6 +30,8 @@ public class CheckInfoController {
 	MemberService memberservice;
 	@Autowired
 	private HttpSession session;
+	@Autowired
+	private ServletContext application;
 	
 //	객실 이미지 업로드
 	@PostMapping("/member/upload_mainImg")
@@ -46,9 +45,13 @@ public class CheckInfoController {
 		image.setImage_fname(fname);
 		image.setImage_size(size);
 		image.setImage_rname(rname);
-		image.setImage_writer(1234567890);
+//		image.setImage_writer((int)session.getAttribute("mbNmae"));
+		image.setImage_writer(1234567890);	//테스트 코드
 		
-		File root = new File("D:/uploadImage");
+//		//이미지 파일 저장
+		String path = application.getRealPath("/webapp/upload");	
+		System.out.println(path);
+		File root = new File(path);
 		if(!root.exists())	root.mkdirs();
 		
 		File target = new File(root, rname);

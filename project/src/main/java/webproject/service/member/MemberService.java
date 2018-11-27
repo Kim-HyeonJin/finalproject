@@ -18,4 +18,5 @@ public interface MemberService {
 	void upload_mainImg(MemberImage image);
 	String nameok(String name);
 
+
 }

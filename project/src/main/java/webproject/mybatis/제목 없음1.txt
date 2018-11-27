@@ -1,0 +1,18 @@
+심각: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception 
+[Request processing failed; 
+nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: ORA-00947: not enough values
+
+
+
+<script type="text/javascript">
+	function readURL(input) {
+		if (input.files && input.files[0]) { 
+			var reader = new FileReader(); 
+			reader.onload = function (e) 
+				{ $('#blah').attr('src', e.target.result);
+			} 
+			reader.readAsDataURL(input.files[0]); 
+		} 
+	} 
+</script>
