@@ -11,7 +11,9 @@
 	
 	
 	<select id="searchlist" resultType="mainsearch">
-		select *from addroom_tb order by addroom_no
+		<!-- select *from addroom_tb order by addroom_no-->
+		select *from addroom_tb where addroom_mb_name like '%'||#{keyword}||'%' 
 	</select>
+	
 	
 </mapper>    

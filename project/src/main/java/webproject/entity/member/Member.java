@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 public class Member {
-	private int mb_businessno; //사업자번호
+	private String mb_businessno; //사업자번호
 	private String mb_name;
 	private String mb_pw;
 	private String mb_ceo;
