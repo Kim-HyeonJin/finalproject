@@ -7,23 +7,26 @@
  -->
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-<script type="text/javascript">
-	$(function() {
-		$("#imgInput").on('change', function(){
-			readURL(this);
-		});
-	});
+    <script type="text/javascript">
+    	
+        $(function() {
+            $(".imgInput").on('change', function(){
+                readURL(this);
+            });
+        });
 
-	function readURL(input) {
-		if (input.files && input.files[0]) {
-			var reader = new FileReader();
-			reader.onload = function (e) {
-					$('#img').attr('src', e.target.result);
-				}
-			reader.readAsDataURL(input.files[0]);
-		}
-	}
-</script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                    $('.img').attr('src', e.target.result);
+                }
+
+              reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
 
 <div>
 	<div align="center">

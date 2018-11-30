@@ -8,12 +8,35 @@
 	내용 : 이미지를 DB에 저장
  -->
 <mapper namespace="webproject.entity.*">
-	<insert id="imageUpload" parameterType="image">
+	<!-- 이미지 등록 -->
+	<insert id="imageUpload" parameterType="image" >
 		insert into  image_tb values(
 											image_no_seq.nextval, #{image_writer}, #{image_location}, 
 											#{image_fname}, #{image_rname}, #{image_size}, 
 											sysdate)
 	</insert>
+	
+ 	<!-- 메인이미지 추가 등록시 기존에 등록된 이미지가 있는지 확인 --> 
+	<select id="count" parameterType="image" resultType="int">
+		select count(*) from image_tb where image_writer=#{image_writer} and image_location='main_image'
+	</select>
+	
+	 <!-- 메인이미지 기존 데이터 삭제 --> 
+	<delete id="deleteImage" parameterType="image">
+			delete from image_tb where 
+						image_writer=#{image_writer} and image_location='main_image'
+	</delete>
+	
+	<!-- 메인이미지 호출 -->
+	<select id="loadImage" resultType="image">
+		select * from image_tb where image_location='main_image'
+	</select>
+	
+	<!-- 회원사 사업자번호로 메인 이미지 호출 -->
+	<select id="findImage" parameterType="image" resultType="image">
+		select * from image_tb where 
+					image_writer=#{image_writer} and image_location='main_image'
+	</select>
 </mapper>
 
 

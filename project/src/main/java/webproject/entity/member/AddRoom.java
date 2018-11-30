@@ -1,6 +1,5 @@
 package webproject.entity.member;
 
-import org.springframework.web.multipart.MultipartFile;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
