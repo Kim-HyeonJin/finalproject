@@ -3,6 +3,7 @@ package webproject.service.member;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
@@ -123,6 +124,30 @@ public class MemberServiceImpl implements MemberService{
 		return abc;
 		
 	}
+
+	@Override
+	public List<MemberImage> loadImage() {
+		System.out.println("[loadImage] : "+sqlSession.selectList("loadImage"));	//테스트 코드
+		return sqlSession.selectList("loadImage");
+	}
+
+	@Override
+	public MemberImage findImage(int image_writer) {
+		System.out.println("[findImage] : "+sqlSession.selectOne("findImage",image_writer));	//테스트 코드
+		return sqlSession.selectOne("findImage", image_writer);
+	}
+	
+	@Override
+	public int count(int image_writer) {
+		System.out.println("카운트 값 확인 : "+sqlSession.selectOne("count", image_writer));
+		return sqlSession.selectOne("count", image_writer);
+	}
+
+	@Override
+	public void deleteImage(int image_writer) {
+		sqlSession.delete("deleteImage", image_writer);
+	}
+
 	
 	
 	
