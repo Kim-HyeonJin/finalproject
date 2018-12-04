@@ -39,14 +39,12 @@ public class MemberServiceImpl implements MemberService{
 		member.setMb_pw(result);
 //		[4] 암호화된 패스워드로 insert 
 		sqlSession.insert("mregister", member);
-		
-				
 	}
-
+	
+//	객실등록 정보 (수정중... 이미지 등록도 같이 되게끔...)
 	@Override
 	public void addroom(AddRoom addroom) {
 		sqlSession.insert("addroom", addroom);
-		
 	}
 
 	//객실이미지 업로드
@@ -60,6 +58,7 @@ public class MemberServiceImpl implements MemberService{
 	//숙소 메인이미지
 	@Override
 	public void upload_mainImg(MemberImage image) {
+		System.out.println("test : "+image);
 		sqlSession.insert("imageUpload", image);
 	}
 
@@ -125,39 +124,71 @@ public class MemberServiceImpl implements MemberService{
 		
 	}
 
+//	전체 이미지 호출
 	@Override
 	public List<MemberImage> loadImage() {
 		System.out.println("[loadImage] : "+sqlSession.selectList("loadImage"));	//테스트 코드
 		return sqlSession.selectList("loadImage");
 	}
 
+//	로그인한 대표자의 대표이미지 호출
 	@Override
 	public MemberImage findImage(int image_writer) {
 		System.out.println("[findImage] : "+sqlSession.selectOne("findImage",image_writer));	//테스트 코드
 		return sqlSession.selectOne("findImage", image_writer);
 	}
 	
+//	기존 대표이미지 존재 유무 확인
 	@Override
 	public int count(int image_writer) {
 		System.out.println("카운트 값 확인 : "+sqlSession.selectOne("count", image_writer));
 		return sqlSession.selectOne("count", image_writer);
 	}
-
+	
+//	기존 대표이미지 삭제
 	@Override
 	public void deleteImage(int image_writer) {
 		sqlSession.delete("deleteImage", image_writer);
 	}
 
-	
-	
-	
-	
-	
+//	회원사 정보 호출
+	@Override
+	public Member callInfo(int mbId) {
+		return sqlSession.selectOne("info", mbId);
+	}
 
-
-
-
-
+//	비밀번호 확인검사
+	@Override
+	public boolean existingpw(Member member) throws NoSuchAlgorithmException {
+		String convertPw = encrypt(member.getMb_pw());
+		member.setMb_pw(convertPw);
+		
+		if((int)sqlSession.selectOne("mlogin", member) == 1) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 	
+//	비밀번호 변경
+	@Override
+	public void changepw(Member member) throws NoSuchAlgorithmException {
+		String convertPw = encrypt(member.getMb_pw());
+		member.setMb_pw(convertPw);
+		sqlSession.update("changepw", member);
+	}
+
+//	숙소 전화번호 변경
+	@Override
+	public void change_phone(Member member) {
+		sqlSession.update("changePhone", member);
+	}
+
+//	핸드폰 번호 변경(대표자)
+	@Override
+	public void change_hp(Member member) {
+		sqlSession.update("changeHp", member);
+	}
 
 }
