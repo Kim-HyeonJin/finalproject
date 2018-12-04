@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import webproject.entity.member.Member;
 import webproject.entity.member.MemberImage;
 import webproject.service.member.MemberService;
 
@@ -36,7 +37,7 @@ import webproject.service.member.MemberService;
 public class CheckInfoController {
 	
 	@Autowired
-	MemberService memberservice;
+	private MemberService memberservice;
 	@Autowired
 	private HttpSession session;
 	
@@ -45,9 +46,9 @@ public class CheckInfoController {
 	@PostMapping("/member/upload_mainImg")
 	public String uploadImage(@ModelAttribute MemberImage image, MultipartHttpServletRequest mRequest) throws IllegalStateException, IOException {
 		
+//		대표이미지의 기존데이터 확인
 //		if(memberservice.count((int)session.getAttribute("mbId")) == 0) {
-		System.out.println("확인중 : "+memberservice.count(1234567890));
-		if(memberservice.count(1234567890) == 0) {
+		if(memberservice.count(1234567890) == 0) {					//테스트 코드
 			MultipartFile file = mRequest.getFile("main_image");
 			String fname = file.getOriginalFilename();
 			Long size = file.getSize();
@@ -57,7 +58,7 @@ public class CheckInfoController {
 			image.setImage_fname(fname);
 			image.setImage_size(size);
 			image.setImage_rname(rname);
-//			image.setImage_writer((int)session.getAttribute("mbNmae"));
+//			image.setImage_writer((int)session.getAttribute("mbId"));
 			image.setImage_writer(1234567890);	//테스트 코드
 			
 //			//이미지 파일 저장
@@ -69,9 +70,10 @@ public class CheckInfoController {
 			
 			memberservice.upload_mainImg(image);
 			
-			return "/member/checkinfo";
+			return "redirect:/member/checkinfo";
 		}
 		else {
+//			기존데이터 존재할 경우 삭제 후 등록
 //			memberservice.deleteImage((int)session.getAttribute("mbId"));
 			memberservice.deleteImage(1234567890);	//테스트 코드
 			
@@ -84,7 +86,7 @@ public class CheckInfoController {
 			image.setImage_fname(fname);
 			image.setImage_size(size);
 			image.setImage_rname(rname);
-//			image.setImage_writer((int)session.getAttribute("mbNmae"));
+//			image.setImage_writer((int)session.getAttribute("mbId"));
 			image.setImage_writer(1234567890);	//테스트 코드
 			
 //			//이미지 파일 저장
@@ -96,7 +98,7 @@ public class CheckInfoController {
 			
 			memberservice.upload_mainImg(image);
 			
-			return "/member/checkinfo";
+			return "redirect:/member/checkinfo";
 		}
 	}
 	
@@ -105,27 +107,27 @@ public class CheckInfoController {
 		return "/member/checkinfo";
 	}
 	
-	//페이지 시작시 대표이미지를 불러온다(Post)
+//	페이지 시작시 대표이미지 및 회원사 정보 호출 컨트롤러
 	@PostMapping("/member/checkinfo")
 	public String checkinfoPost(Model model) {
-		System.out.println(model.addAttribute("list", memberservice.loadImage()));	//테스트 코드
+//		model.addAttribute("info", memberservice.callInfo((int)session.getAttribute("mbId")));
+		model.addAttribute("info", memberservice.callInfo(1234567890));		//테스트 코드
 		model.addAttribute("list", memberservice.loadImage());		
 		return "/member/checkinfo";
 	}
-	//페이지 시작시 대표이미지를 불러온다(Get)
+	
 	@GetMapping("/member/checkinfo")
 	public String checkinfoGet(Model model) {
-		System.out.println(model.addAttribute("list", memberservice.loadImage()));	//테스트 코드
+//		model.addAttribute("info", memberservice.callInfo((int)session.getAttribute("mbId")));
+		model.addAttribute("info", memberservice.callInfo(1234567890));		//테스트 코드
 		model.addAttribute("list", memberservice.loadImage());		
 		return "/member/checkinfo";
 	}
 	
-//	@RequestMapping("/download")
-	
-//	이미지를 내보내는 컨트롤러(image/jpeg)
-	@RequestMapping("/member/checkinfo/main_image")
+//	이미지를 내보내는 컨트롤러
+	@PostMapping("/member/checkinfo/main_image")
 	@ResponseBody
-	public ResponseEntity<ByteArrayResource> image(@RequestParam int image_writer) throws IOException{
+	public ResponseEntity<ByteArrayResource> imagePost(@RequestParam int image_writer) throws IOException{
 		MemberImage img = memberservice.findImage(image_writer);
 		File target = new File("D:/uploadImage", img.getImage_rname());
 		if(!target.exists()) throw new FileNotFoundException();
@@ -133,6 +135,21 @@ public class CheckInfoController {
 		byte[] by = FileUtils.readFileToByteArray(target);
 		ByteArrayResource resource = new ByteArrayResource(by);
 		
+		return ResponseEntity.ok()
+													.contentType(getImageType(img.getImage_fname()))
+													.contentLength(img.getImage_size())
+													.body(resource);
+	}
+	
+	@GetMapping("/member/checkinfo/main_image")
+	@ResponseBody
+	public ResponseEntity<ByteArrayResource> imageGet(@RequestParam int image_writer) throws IOException{
+		MemberImage img = memberservice.findImage(image_writer);
+		File target = new File("D:/uploadImage", img.getImage_rname());
+		if(!target.exists()) throw new FileNotFoundException();
+		
+		byte[] by = FileUtils.readFileToByteArray(target);
+		ByteArrayResource resource = new ByteArrayResource(by);
 		return ResponseEntity.ok()
 													.contentType(getImageType(img.getImage_fname()))
 													.contentLength(img.getImage_size())

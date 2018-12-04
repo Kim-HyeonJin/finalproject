@@ -5,7 +5,7 @@
     
 <!-- 
 	작업 : 김현진
-	내용 : 이미지를 DB에 저장
+	내용 : 이미지 관련 작업을 수행
  -->
 <mapper namespace="webproject.entity.*">
 	<!-- 이미지 등록 -->
@@ -16,7 +16,7 @@
 											sysdate)
 	</insert>
 	
- 	<!-- 메인이미지 추가 등록시 기존에 등록된 이미지가 있는지 확인 --> 
+ 	<!-- 메인이미지 추가 등록시 기존에 등록된 이미지가 있는지 확인 -->
 	<select id="count" parameterType="image" resultType="int">
 		select count(*) from image_tb where image_writer=#{image_writer} and image_location='main_image'
 	</select>

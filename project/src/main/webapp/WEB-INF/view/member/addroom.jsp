@@ -7,6 +7,7 @@
  -->
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<jsp:include page="../template/member_header.jsp"></jsp:include>
     <script type="text/javascript">
     	
         $(function() {
@@ -20,6 +21,8 @@
             var reader = new FileReader();
 
             reader.onload = function (e) {
+            		console.log('실행');
+            		console.log(e.target.result);
                     $('.img').attr('src', e.target.result);
                 }
 
@@ -63,3 +66,6 @@
     	</form>
     </div>
 </div>
+
+
+<jsp:include page="../template/member_footer.jsp"></jsp:include>
